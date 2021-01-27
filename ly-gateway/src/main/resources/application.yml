@@ -34,7 +34,7 @@ spring:
       routes:
         - id: item-server
           uri: lb://item-server
-          #          断言  蓝蓝
+          #          断言
           predicates:
             - Path=/api/item/**
           filters:

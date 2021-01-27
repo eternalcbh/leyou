@@ -1,4 +1,4 @@
-package com.leyou.item.ItemController;
+package com.leyou.item.controller;
 
 import com.leyou.item.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
