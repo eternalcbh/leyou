@@ -1,0 +1,51 @@
+server:
+  port: 10010
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://manage.leyou.com"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+            maxAge: 360000
+            allowedMethods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - OPTIONS
+              - HEAD
+
+      default-filters:
+        - name: Hystrix
+          args:
+            name: fallbackcmd
+            fallbackUri: forward:/fallback
+      routes:
+        - id: item-server
+          uri: lb://item-server
+          #          断言
+          predicates:
+            - Path=/api/item/**
+          filters:
+            - StripPrefix=2
+
+#线程隔离
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            #设置API网关中路由转发请求的HystrixCommand执行超时时间
+            timeoutInMilliseconds: 5000
