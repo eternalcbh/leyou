@@ -13,8 +13,10 @@ import java.util.Map;
 /**
  * @author: 黑马程序员
  **/
+@SuppressWarnings("ALL")
 public class JsonUtils {
 
+    @SuppressWarnings("AlibabaConstantFieldShouldBeUpperCase")
     public static final ObjectMapper mapper = new ObjectMapper();
 
     private static final Logger logger = LoggerFactory.getLogger(JsonUtils.class);

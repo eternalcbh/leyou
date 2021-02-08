@@ -1,4 +1,4 @@
-package com.leyou.common.exception.pojo;
+package com.leyou.common.exception;
 
 import lombok.Getter;
 

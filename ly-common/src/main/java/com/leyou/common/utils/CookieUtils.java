@@ -136,8 +136,9 @@ public final class CookieUtils {
                     value = URLEncoder.encode(value, charset);
                 }
                 Cookie cookie = new Cookie(name, value);
-                if (maxAge != null && maxAge >= 0)
-                    cookie.setMaxAge(maxAge);
+                if (maxAge != null && maxAge >= 0) {
+	                cookie.setMaxAge(maxAge);
+                }
 
                 if(StringUtils.isNotBlank(domain)){
                     cookie.setDomain(domain);
@@ -164,7 +165,7 @@ public final class CookieUtils {
             String domainName = null;
 
             String serverName = request.getRequestURL().toString();
-            if (serverName == null || serverName.equals("")) {
+            if (serverName == null || "".equals(serverName)) {
                 domainName = "";
             } else {
                 serverName = serverName.toLowerCase();

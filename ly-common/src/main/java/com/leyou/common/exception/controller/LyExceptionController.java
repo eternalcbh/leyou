@@ -1,7 +1,7 @@
-package com.leyou.common.controller;
+package com.leyou.common.exception.controller;
 
-import com.leyou.common.exception.pojo.ExceptionResult;
-import com.leyou.common.exception.pojo.LyException;
+import com.leyou.common.exception.ExceptionResult;
+import com.leyou.common.exception.LyException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

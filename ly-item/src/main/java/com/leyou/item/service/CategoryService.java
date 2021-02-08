@@ -2,8 +2,8 @@ package com.leyou.item.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.leyou.common.exception.pojo.ExceptionEnum;
-import com.leyou.common.exception.pojo.LyException;
+import com.leyou.common.exception.ExceptionEnum;
+import com.leyou.common.exception.LyException;
 import com.leyou.item.pojo.Category;
 import com.leyou.item.mapper.CategoryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +50,14 @@ public class CategoryService {
 		}
 
 		//4.返回结果
+		return categories;
+	}
+
+	public List<Category> findCategoriesByIds(List<Long> ids) {
+		List<Category> categories = categoryMapper.selectBatchIds(ids);
+		if (CollectionUtils.isEmpty(categories)){
+			throw new LyException(ExceptionEnum.CATEGORY_NOT_FOUND);
+		}
 		return categories;
 	}
 }

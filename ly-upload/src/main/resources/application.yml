@@ -1,0 +1,22 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: upload-service
+  servlet:
+    multipart:
+      max-file-size: 5MB
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+ly:
+  oss:
+    accessKeyId: LTAI4GGZzVUk5EAA6q753Eq4
+    accessKeySecret: JJCs1RjwhcVKbNb3UosccKwX5OCOF3
+    host: http://image.leyou.com
+    endpoint: oss-cn-guangzhou.aliyuncs.com
+    dir: ""
+    expireTime: 200
+    maxFileSize: 5242880

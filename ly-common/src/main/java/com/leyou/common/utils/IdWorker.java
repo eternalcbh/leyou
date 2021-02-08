@@ -22,26 +22,37 @@ import java.net.NetworkInterface;
  *
  * @author 黑马程序员
  */
+@SuppressWarnings("ALL")
 public class IdWorker {
     // 时间起始标记点，作为基准，一般取系统的最近时间（一旦确定不能变动）
+    @SuppressWarnings("AlibabaConstantFieldShouldBeUpperCase")
     private final static long twepoch = 1288834974657L;
     // 机器标识位数
+    @SuppressWarnings("AlibabaConstantFieldShouldBeUpperCase")
     private final static long workerIdBits = 5L;
     // 数据中心标识位数
+    @SuppressWarnings("AlibabaConstantFieldShouldBeUpperCase")
     private final static long datacenterIdBits = 5L;
     // 机器ID最大值
+    @SuppressWarnings("AlibabaConstantFieldShouldBeUpperCase")
     private final static long maxWorkerId = -1L ^ (-1L << workerIdBits);
     // 数据中心ID最大值
+    @SuppressWarnings("AlibabaConstantFieldShouldBeUpperCase")
     private final static long maxDatacenterId = -1L ^ (-1L << datacenterIdBits);
     // 毫秒内自增位
+    @SuppressWarnings("AlibabaConstantFieldShouldBeUpperCase")
     private final static long sequenceBits = 12L;
     // 机器ID偏左移12位
+    @SuppressWarnings("AlibabaConstantFieldShouldBeUpperCase")
     private final static long workerIdShift = sequenceBits;
     // 数据中心ID左移17位
+    @SuppressWarnings("AlibabaConstantFieldShouldBeUpperCase")
     private final static long datacenterIdShift = sequenceBits + workerIdBits;
     // 时间毫秒左移22位
+    @SuppressWarnings("AlibabaConstantFieldShouldBeUpperCase")
     private final static long timestampLeftShift = sequenceBits + workerIdBits + datacenterIdBits;
 
+    @SuppressWarnings("AlibabaConstantFieldShouldBeUpperCase")
     private final static long sequenceMask = -1L ^ (-1L << sequenceBits);
     /* 上次生产id时间戳 */
     private static long lastTimestamp = -1L;

@@ -14,6 +14,8 @@
         <module>ly-pojo</module>
         <module>ly-client</module>
         <module>ly-item</module>
+        <module>ly-upload</module>
+        <module>ly-search</module>
     </modules>
 
     <parent>

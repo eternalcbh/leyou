@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leyou.item.mapper.BrandMapper">
+    <!--保存分类品牌中间表-->
+    <!--
+        foreach: for循序
+            collection： 需要遍历的内容（数组，集合）
+            item: 遍历的每个元素的别名
+            separator: 分隔符
+    -->
+    <insert id="saveCategoryAndBrand">
+        insert into tb_category_brand(category_id,brand_id) values
+        <foreach collection="cids" item="cid" separator=",">
+            (#{cid} , #{bid})
+        </foreach>
+    </insert>
+
+
+    <select id="findBrandsByCid" resultType="com.leyou.item.pojo.Brand">
+        select
+            *
+        from
+            tb_brand
+        inner join
+            tb_category_brand
+        on
+            brand_id = id
+        where
+            category_id = #{cid}
+    </select>
+
+
+</mapper>
