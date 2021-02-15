@@ -13,8 +13,8 @@ spring:
 
 ly:
   oss:
-    accessKeyId: LTAI4GGZzVUk5EAA6q753Eq4
-    accessKeySecret: JJCs1RjwhcVKbNb3UosccKwX5OCOF3
+    accessKeyId: 
+    accessKeySecret: 
     host: http://image.leyou.com
     endpoint: oss-cn-guangzhou.aliyuncs.com
     dir: ""
